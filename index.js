@@ -21,7 +21,7 @@ const cors = require("cors")
 const allowedOrigins =[
    // "http://127.0.0.1:5500"
 
-    "https://ctf2024.netlify.app/"
+    "https://ctf2024.netlify.app"
 ];
 
 
