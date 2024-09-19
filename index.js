@@ -33,8 +33,6 @@ const corsOptions = {
 };
 
 app.use(cors(corsOptions));
-app.options('*', cors(corsOptions)); // Handle preflight requests
-
 
 // Route import and mount
 const user = require("./routes/user");
