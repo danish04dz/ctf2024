@@ -15,11 +15,11 @@ require("./config/database").connect();
 
 // CORS setup
 const cors = require("cors");
+
 const allowedOrigins = [
-    "https://ctf2024.netlify.app"
+    "https://ctf2024.netlify.app",
 ];
 
-// CORS options
 const corsOptions = {
     origin: function (origin, callback) {
         if (allowedOrigins.includes(origin) || !origin) {
@@ -28,11 +28,12 @@ const corsOptions = {
             callback(new Error("Not allowed by CORS"));
         }
     },
-    credentials: true, // Allow credentials (like cookies) to be included
+    credentials: true, // Allow credentials (cookies, etc.)
 };
 
-// Apply CORS middleware
 app.use(cors(corsOptions));
+app.options('*', cors(corsOptions)); // Handle preflight requests
+
 
 // Route import and mount
 const user = require("./routes/user");
