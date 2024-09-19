@@ -28,6 +28,7 @@ const corsOptions = {
             callback(new Error("Not allowed by CORS"));
         }
     },
+    methods: ['GET', 'POST'], // Allow methods
     credentials: true, // Allow credentials (cookies, etc.)
 };
 
